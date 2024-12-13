@@ -1,3 +1,5 @@
+import Auth from "@/components/auth/Auth";
+import Empty from "@/components/Empty/Empty";
 import Form from "@/components/Todo/Form";
 import Todo from "@/components/Todo/Todo";
 import Image from "next/image";
@@ -16,6 +18,7 @@ export default function Myday() {
   console.log(fullDate);
 
   return (
+    <>
     <div className="pt-10 md:ps-16  p-5 md:pe-10 relative w-full h-screen  text-white">
       <IoReorderThree className="md:hidden block text-3xl"/>
       <h1 className="text-4xl ">My Day</h1>
@@ -27,8 +30,7 @@ export default function Myday() {
         height={1000}
         className="absolute top-0 left-0  w-full h-full object-cover -z-10"
       />
-      <div className="md:h-[520px] h-[450px] mt-4 overflow-y-auto custom-scrollbar">
-        {/* Todos */}
+      <div className=" md:h-3/4 h-[70%]    mt-4 overflow-y-auto custom-scrollbar">
         <div className=" flex flex-col gap-1">
           {Array(4)
             .fill(0)
@@ -36,8 +38,13 @@ export default function Myday() {
               <Todo key={idx} id={idx} />
             ))}
         </div>
+
+      {/* <Empty/> */}
       </div>
       <Form/>
     </div>
+    <Auth/>
+
+    </>
   );
 }

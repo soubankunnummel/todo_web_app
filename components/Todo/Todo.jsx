@@ -12,7 +12,7 @@ export default function Todo({ id }) {
   };
 
   return (
-    <div className="w-full bg-primary hover:bg-zinc-700 cursor-pointer opacity-90 rounded-sm flex justify-between  text-start p-5 max-h-40 overflow-y-auto">
+    <div className="w-full bg-primary hover:bg-zinc-700 cursor-pointer opacity-90 rounded-sm flex justify-between  text-start p-5 max-h-20 overflow-y-auto">
       <div className="flex items-center gap-5">
         <TickMark checked={checked} setChecked={setChecked} />
         <p className={`${checked && "line-through"}`}>

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import TickMark from "./TickMark";
 import { FaRegStar, FaStar } from "react-icons/fa6";
 
-export default function Todo({ id }) {
+export default function Todo({ id, text}) {
   const [checked, setChecked] = useState(false);
   const [clicked, setClicked] = useState(false);
 
@@ -16,7 +16,7 @@ export default function Todo({ id }) {
       <div className="flex items-center gap-5">
         <TickMark checked={checked} setChecked={setChecked} />
         <p className={`${checked && "line-through"}`}>
-          todo Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          {text}
         </p>
       </div>
       {clicked ? (
